@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220706 09:00:44.582" rpa="false" schemaversion="3">
+<suite id="s1" name="Matheus-Chico" source="C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\Matheus-Chico.robot">
+<test id="s1-t1" name="Processo de compra de uma camiseta &quot;Vira lata caramelo&quot; no site do Chico Rei" line="7">
+<kw name="Abrir o site da loja Chico Rei" library="Matheus-Chico">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 09:00:44.742" level="INFO">Opening browser 'Firefox' to base url 'https://www.chicorei.com'.</msg>
+<msg timestamp="20220706 09:00:44.743" level="INFO">Firefox driver log is always forced to to: C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\geckodriver-1.log</msg>
+<status status="PASS" starttime="20220706 09:00:44.742" endtime="20220706 09:00:53.573"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 09:00:53.573" endtime="20220706 09:00:53.828"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:44.742" endtime="20220706 09:00:53.829"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_COOKIES}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:53.830" level="INFO">Clicking button 'id:confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20220706 09:00:53.829" endtime="20220706 09:00:54.056"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:53.829" endtime="20220706 09:00:54.056"/>
+</kw>
+<kw name="Pesquisar por &quot;Vira lata caramelo&quot; e selecionar a primeira opção da lista de resultados" library="Matheus-Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>${TC1_PRODUCT_NAME}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:54.057" level="INFO">Typing text 'Vira lata caramelo' into text field 'id:header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20220706 09:00:54.057" endtime="20220706 09:00:54.086"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220706 09:00:54.086" level="INFO">Sending key(s) ('RETURN',) to id:header-search-input-desktop element.</msg>
+<msg timestamp="20220706 09:00:54.355" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220706 09:00:54.355" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220706 09:00:54.086" endtime="20220706 09:00:54.376"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:00:54.376" endtime="20220706 09:00:55.037"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<arg>${TC1_SEARCH_RESULT_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:00:55.050" level="INFO">Element 'css:#catalog-breadcrumb &gt; li:nth-child(1) &gt; span:nth-child(1)' contains text 'Vira lata caramelo'.</msg>
+<status status="PASS" starttime="20220706 09:00:55.037" endtime="20220706 09:00:55.050"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FIRST_SEARCH_RESULT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:55.051" level="INFO">Clicking element 'css:#catalog-main &gt; div &gt; div &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:00:55.050" endtime="20220706 09:00:57.667"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:54.057" endtime="20220706 09:00:57.667"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,99&quot;" library="Matheus-Chico">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRICE_ELEMENT}</arg>
+<arg>R$ 69,99</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:00:57.697" level="INFO">Element 'css:.text-yanone &gt; .d-inline-flex &gt; .h2' contains text 'R$ 69,99'.</msg>
+<status status="PASS" starttime="20220706 09:00:57.668" endtime="20220706 09:00:57.697"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:57.668" endtime="20220706 09:00:57.697"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Matheus-Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:57.698" level="INFO">Clicking element 'css:nav.cr-option:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:00:57.698" endtime="20220706 09:00:57.949"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_SIZE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:57.950" level="INFO">Clicking element 'css:div.cr-option-squared:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:00:57.949" endtime="20220706 09:00:58.161"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:58.162" level="INFO">Clicking element 'css:.product-variations-colors &gt; div:nth-child(1) &gt; div:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:00:58.162" endtime="20220706 09:00:58.371"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUY_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:58.372" level="INFO">Clicking button 'css:#product-buy-button-container &gt; button'.</msg>
+<status status="PASS" starttime="20220706 09:00:58.371" endtime="20220706 09:00:58.615"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:57.697" endtime="20220706 09:00:58.615"/>
+</kw>
+<kw name="Clicar em &quot;Ver sacola&quot;" library="Matheus-Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:00:58.616" endtime="20220706 09:00:58.841"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:00:58.841" level="INFO">Clicking element 'css:#header-cart-popover &gt; div &gt; div.text-center &gt; a.btn.btn-lg.mb'.</msg>
+<status status="PASS" starttime="20220706 09:00:58.841" endtime="20220706 09:01:00.149"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:00.195" level="INFO">Current page contains text 'Sua sacola'.</msg>
+<status status="PASS" starttime="20220706 09:01:00.149" endtime="20220706 09:01:00.195"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:58.616" endtime="20220706 09:01:00.195"/>
+</kw>
+<kw name="Validar se a mensagem &quot;VOCÊ ESTÁ ACUMULANDO 1 PONTO NO CARTÃO FIDELIDADE!&quot; está sendo exibida" library="Matheus-Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TC1_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:00.218" level="INFO">Current page contains text 'Você está acumulando 1 ponto no cartão fidelidade!'.</msg>
+<status status="PASS" starttime="20220706 09:01:00.196" endtime="20220706 09:01:00.218"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:00.195" endtime="20220706 09:01:00.218"/>
+</kw>
+<kw name="Clicar em &quot;Fechar pedido&quot;" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:00.219" level="INFO">Clicking button 'css:#cart-finish &gt; button.btn.btn-xl.btn-wide.mt.hidden-xs-down'.</msg>
+<status status="PASS" starttime="20220706 09:01:00.219" endtime="20220706 09:01:01.952"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:01.983" level="INFO">Current page contains text 'Login'.</msg>
+<status status="PASS" starttime="20220706 09:01:01.952" endtime="20220706 09:01:01.983"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:00.219" endtime="20220706 09:01:01.984"/>
+</kw>
+<kw name="Fechar Navegador" library="Matheus-Chico">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 09:01:01.984" endtime="20220706 09:01:02.699"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:01.984" endtime="20220706 09:01:02.700"/>
+</kw>
+<status status="PASS" starttime="20220706 09:00:44.741" endtime="20220706 09:01:02.700"/>
+</test>
+<test id="s1-t2" name="Processo de compra de uma camiseta &quot;Amarelo é Desespero&quot; no site do Chico Rei" line="18">
+<kw name="Abrir o site da loja Chico Rei" library="Matheus-Chico">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 09:01:02.702" level="INFO">Opening browser 'Firefox' to base url 'https://www.chicorei.com'.</msg>
+<msg timestamp="20220706 09:01:02.702" level="INFO">Firefox driver log is always forced to to: C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\geckodriver-2.log</msg>
+<status status="PASS" starttime="20220706 09:01:02.701" endtime="20220706 09:01:12.201"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 09:01:12.202" endtime="20220706 09:01:12.461"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:02.701" endtime="20220706 09:01:12.462"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_COOKIES}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:12.462" level="INFO">Clicking button 'id:confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20220706 09:01:12.462" endtime="20220706 09:01:12.696"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:12.462" endtime="20220706 09:01:12.696"/>
+</kw>
+<kw name="Pesquisar por &quot;Amarelo é desespero&quot; e selecionar a primeira opção da lista de resultados" library="Matheus-Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>${TC2_PRODUCT_NAME}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:12.697" level="INFO">Typing text 'Amarelo é desespero' into text field 'id:header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20220706 09:01:12.696" endtime="20220706 09:01:12.721"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220706 09:01:12.721" level="INFO">Sending key(s) ('RETURN',) to id:header-search-input-desktop element.</msg>
+<msg timestamp="20220706 09:01:13.003" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220706 09:01:13.003" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220706 09:01:12.721" endtime="20220706 09:01:13.024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:13.024" endtime="20220706 09:01:14.159"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<arg>${TC2_SEARCH_RESULT_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:14.197" level="INFO">Element 'css:#catalog-breadcrumb &gt; li:nth-child(1) &gt; span:nth-child(1)' contains text 'Amarelo é desespero'.</msg>
+<status status="PASS" starttime="20220706 09:01:14.159" endtime="20220706 09:01:14.197"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FIRST_SEARCH_RESULT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:14.197" level="INFO">Clicking element 'css:#catalog-main &gt; div &gt; div &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:14.197" endtime="20220706 09:01:16.431"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:12.696" endtime="20220706 09:01:16.431"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,99&quot;" library="Matheus-Chico">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRICE_ELEMENT}</arg>
+<arg>R$ 69,99</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:16.457" level="INFO">Element 'css:.text-yanone &gt; .d-inline-flex &gt; .h2' contains text 'R$ 69,99'.</msg>
+<status status="PASS" starttime="20220706 09:01:16.432" endtime="20220706 09:01:16.457"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:16.432" endtime="20220706 09:01:16.457"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Matheus-Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:16.458" level="INFO">Clicking element 'css:nav.cr-option:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:16.458" endtime="20220706 09:01:16.703"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_SIZE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:16.703" level="INFO">Clicking element 'css:div.cr-option-squared:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:16.703" endtime="20220706 09:01:16.926"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:16.927" level="INFO">Clicking element 'css:.product-variations-colors &gt; div:nth-child(1) &gt; div:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:16.926" endtime="20220706 09:01:17.137"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUY_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:17.137" level="INFO">Clicking button 'css:#product-buy-button-container &gt; button'.</msg>
+<status status="PASS" starttime="20220706 09:01:17.137" endtime="20220706 09:01:17.378"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:16.458" endtime="20220706 09:01:17.379"/>
+</kw>
+<kw name="Clicar em &quot;Ver sacola&quot;" library="Matheus-Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:17.379" endtime="20220706 09:01:17.607"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:17.607" level="INFO">Clicking element 'css:#header-cart-popover &gt; div &gt; div.text-center &gt; a.btn.btn-lg.mb'.</msg>
+<status status="PASS" starttime="20220706 09:01:17.607" endtime="20220706 09:01:18.776"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:18.801" level="INFO">Current page contains text 'Sua sacola'.</msg>
+<status status="PASS" starttime="20220706 09:01:18.776" endtime="20220706 09:01:18.801"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:17.379" endtime="20220706 09:01:18.802"/>
+</kw>
+<kw name="Validar se a mensagem &quot;Em todos os pedidos acima de R$150 para as regiões Sul e Sudeste. R$200 para as demais regiões.&quot; está sendo exibida" library="Matheus-Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TC2_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:18.818" level="INFO">Current page contains text 'Em todos os pedidos acima de R$150 para as regiões Sul e Sudeste. R$200 para as demais regiões.'.</msg>
+<status status="PASS" starttime="20220706 09:01:18.802" endtime="20220706 09:01:18.818"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:18.802" endtime="20220706 09:01:18.818"/>
+</kw>
+<kw name="Clicar em &quot;Fechar pedido&quot;" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:18.819" level="INFO">Clicking button 'css:#cart-finish &gt; button.btn.btn-xl.btn-wide.mt.hidden-xs-down'.</msg>
+<status status="PASS" starttime="20220706 09:01:18.819" endtime="20220706 09:01:20.249"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:20.267" level="INFO">Current page contains text 'Login'.</msg>
+<status status="PASS" starttime="20220706 09:01:20.250" endtime="20220706 09:01:20.268"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:18.818" endtime="20220706 09:01:20.268"/>
+</kw>
+<kw name="Fechar Navegador" library="Matheus-Chico">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 09:01:20.268" endtime="20220706 09:01:20.882"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:20.268" endtime="20220706 09:01:20.882"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:02.701" endtime="20220706 09:01:20.882"/>
+</test>
+<test id="s1-t3" name="Processo de compra de uma camiseta &quot;Erarr é humano&quot; no site do Chico Rei" line="29">
+<kw name="Abrir o site da loja Chico Rei" library="Matheus-Chico">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 09:01:20.884" level="INFO">Opening browser 'Firefox' to base url 'https://www.chicorei.com'.</msg>
+<msg timestamp="20220706 09:01:20.884" level="INFO">Firefox driver log is always forced to to: C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\geckodriver-3.log</msg>
+<status status="PASS" starttime="20220706 09:01:20.884" endtime="20220706 09:01:30.682"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 09:01:30.682" endtime="20220706 09:01:30.945"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:20.883" endtime="20220706 09:01:30.945"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_COOKIES}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:30.946" level="INFO">Clicking button 'id:confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20220706 09:01:30.946" endtime="20220706 09:01:31.173"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:30.946" endtime="20220706 09:01:31.174"/>
+</kw>
+<kw name="Pesquisar por &quot;Erarr&quot; e selecionar a primeira opção da lista de resultados" library="Matheus-Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>${TC3_PRODUCT_NAME}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:31.174" level="INFO">Typing text 'Erarr' into text field 'id:header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20220706 09:01:31.174" endtime="20220706 09:01:31.193"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220706 09:01:31.193" level="INFO">Sending key(s) ('RETURN',) to id:header-search-input-desktop element.</msg>
+<msg timestamp="20220706 09:01:31.477" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220706 09:01:31.477" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220706 09:01:31.193" endtime="20220706 09:01:31.498"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:31.498" endtime="20220706 09:01:32.795"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<arg>${TC3_SEARCH_RESULT_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:32.808" level="INFO">Element 'css:#catalog-breadcrumb &gt; li:nth-child(1) &gt; span:nth-child(1)' contains text 'Erarr'.</msg>
+<status status="PASS" starttime="20220706 09:01:32.795" endtime="20220706 09:01:32.808"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FIRST_SEARCH_RESULT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:32.808" level="INFO">Clicking element 'css:#catalog-main &gt; div &gt; div &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:32.808" endtime="20220706 09:01:34.984"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:31.174" endtime="20220706 09:01:34.985"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,99&quot;" library="Matheus-Chico">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRICE_ELEMENT}</arg>
+<arg>R$ 69,99</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:35.007" level="INFO">Element 'css:.text-yanone &gt; .d-inline-flex &gt; .h2' contains text 'R$ 69,99'.</msg>
+<status status="PASS" starttime="20220706 09:01:34.985" endtime="20220706 09:01:35.007"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:34.985" endtime="20220706 09:01:35.007"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Matheus-Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:35.008" level="INFO">Clicking element 'css:nav.cr-option:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:35.008" endtime="20220706 09:01:35.254"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_SIZE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:35.254" level="INFO">Clicking element 'css:div.cr-option-squared:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:35.254" endtime="20220706 09:01:35.466"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:35.467" level="INFO">Clicking element 'css:.product-variations-colors &gt; div:nth-child(1) &gt; div:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:35.467" endtime="20220706 09:01:35.676"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUY_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:35.677" level="INFO">Clicking button 'css:#product-buy-button-container &gt; button'.</msg>
+<status status="PASS" starttime="20220706 09:01:35.676" endtime="20220706 09:01:35.912"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:35.007" endtime="20220706 09:01:35.913"/>
+</kw>
+<kw name="Clicar em &quot;Ver sacola&quot;" library="Matheus-Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:35.913" endtime="20220706 09:01:36.134"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:36.135" level="INFO">Clicking element 'css:#header-cart-popover &gt; div &gt; div.text-center &gt; a.btn.btn-lg.mb'.</msg>
+<status status="PASS" starttime="20220706 09:01:36.134" endtime="20220706 09:01:38.301"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:38.332" level="INFO">Current page contains text 'Sua sacola'.</msg>
+<status status="PASS" starttime="20220706 09:01:38.301" endtime="20220706 09:01:38.332"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:35.913" endtime="20220706 09:01:38.332"/>
+</kw>
+<kw name="Validar se a mensagem &quot;De segunda a sexta, das 8h às 18h.&quot; está sendo exibida" library="Matheus-Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TC3_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:38.379" level="INFO">Current page contains text 'De segunda a sexta, das 8h às 18h.'.</msg>
+<status status="PASS" starttime="20220706 09:01:38.333" endtime="20220706 09:01:38.379"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:38.332" endtime="20220706 09:01:38.379"/>
+</kw>
+<kw name="Clicar em &quot;Fechar pedido&quot;" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:38.380" level="INFO">Clicking button 'css:#cart-finish &gt; button.btn.btn-xl.btn-wide.mt.hidden-xs-down'.</msg>
+<status status="PASS" starttime="20220706 09:01:38.379" endtime="20220706 09:01:40.003"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:40.019" level="INFO">Current page contains text 'Login'.</msg>
+<status status="PASS" starttime="20220706 09:01:40.003" endtime="20220706 09:01:40.019"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:38.379" endtime="20220706 09:01:40.019"/>
+</kw>
+<kw name="Fechar Navegador" library="Matheus-Chico">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 09:01:40.019" endtime="20220706 09:01:41.521"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:40.019" endtime="20220706 09:01:41.521"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:20.883" endtime="20220706 09:01:41.522"/>
+</test>
+<test id="s1-t4" name="Processo de compra de uma camiseta &quot;Nem Te Vi&quot; no site do Chico Rei" line="40">
+<kw name="Abrir o site da loja Chico Rei" library="Matheus-Chico">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 09:01:41.523" level="INFO">Opening browser 'Firefox' to base url 'https://www.chicorei.com'.</msg>
+<msg timestamp="20220706 09:01:41.524" level="INFO">Firefox driver log is always forced to to: C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\geckodriver-4.log</msg>
+<status status="PASS" starttime="20220706 09:01:41.523" endtime="20220706 09:01:50.106"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 09:01:50.107" endtime="20220706 09:01:50.362"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:41.523" endtime="20220706 09:01:50.362"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_COOKIES}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:50.363" level="INFO">Clicking button 'id:confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20220706 09:01:50.362" endtime="20220706 09:01:50.590"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:50.362" endtime="20220706 09:01:50.591"/>
+</kw>
+<kw name="Pesquisar por &quot;Nem Te Vi&quot; e selecionar a primeira opção da lista de resultados" library="Matheus-Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>${TC4_PRODUCT_NAME}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:50.591" level="INFO">Typing text 'Nem Te Vi' into text field 'id:header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20220706 09:01:50.591" endtime="20220706 09:01:50.619"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220706 09:01:50.619" level="INFO">Sending key(s) ('RETURN',) to id:header-search-input-desktop element.</msg>
+<msg timestamp="20220706 09:01:50.899" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220706 09:01:50.899" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220706 09:01:50.619" endtime="20220706 09:01:50.919"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:50.919" endtime="20220706 09:01:52.433"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<arg>${TC4_SEARCH_RESULT_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:52.444" level="INFO">Element 'css:#catalog-breadcrumb &gt; li:nth-child(1) &gt; span:nth-child(1)' contains text 'Nem Te Vi'.</msg>
+<status status="PASS" starttime="20220706 09:01:52.433" endtime="20220706 09:01:52.444"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FIRST_SEARCH_RESULT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:52.444" level="INFO">Clicking element 'css:#catalog-main &gt; div &gt; div &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:52.444" endtime="20220706 09:01:54.782"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:50.591" endtime="20220706 09:01:54.782"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,99&quot;" library="Matheus-Chico">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRICE_ELEMENT}</arg>
+<arg>R$ 69,99</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:01:54.807" level="INFO">Element 'css:.text-yanone &gt; .d-inline-flex &gt; .h2' contains text 'R$ 69,99'.</msg>
+<status status="PASS" starttime="20220706 09:01:54.782" endtime="20220706 09:01:54.808"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:54.782" endtime="20220706 09:01:54.808"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Matheus-Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:54.809" level="INFO">Clicking element 'css:nav.cr-option:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:54.809" endtime="20220706 09:01:55.050"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_SIZE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:55.051" level="INFO">Clicking element 'css:div.cr-option-squared:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:55.050" endtime="20220706 09:01:55.265"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:55.266" level="INFO">Clicking element 'css:.product-variations-colors &gt; div:nth-child(1) &gt; div:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:01:55.265" endtime="20220706 09:01:55.475"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUY_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:55.476" level="INFO">Clicking button 'css:#product-buy-button-container &gt; button'.</msg>
+<status status="PASS" starttime="20220706 09:01:55.475" endtime="20220706 09:01:55.717"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:54.808" endtime="20220706 09:01:55.717"/>
+</kw>
+<kw name="Clicar em &quot;Ver sacola&quot;" library="Matheus-Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:01:55.717" endtime="20220706 09:01:55.948"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:55.949" level="INFO">Clicking element 'css:#header-cart-popover &gt; div &gt; div.text-center &gt; a.btn.btn-lg.mb'.</msg>
+<status status="PASS" starttime="20220706 09:01:55.948" endtime="20220706 09:01:57.501"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:57.532" level="INFO">Current page contains text 'Sua sacola'.</msg>
+<status status="PASS" starttime="20220706 09:01:57.501" endtime="20220706 09:01:57.532"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:55.717" endtime="20220706 09:01:57.532"/>
+</kw>
+<kw name="Validar se a mensagem &quot;Compre parcelado com cartão ou a vista com boleto ou depósito&quot; está sendo exibida" library="Matheus-Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TC4_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:57.565" level="INFO">Current page contains text 'Compre parcelado com cartão ou a vista com boleto ou depósito'.</msg>
+<status status="PASS" starttime="20220706 09:01:57.533" endtime="20220706 09:01:57.565"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:57.533" endtime="20220706 09:01:57.565"/>
+</kw>
+<kw name="Clicar em &quot;Fechar pedido&quot;" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:01:57.566" level="INFO">Clicking button 'css:#cart-finish &gt; button.btn.btn-xl.btn-wide.mt.hidden-xs-down'.</msg>
+<status status="PASS" starttime="20220706 09:01:57.566" endtime="20220706 09:01:59.109"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:01:59.141" level="INFO">Current page contains text 'Login'.</msg>
+<status status="PASS" starttime="20220706 09:01:59.109" endtime="20220706 09:01:59.142"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:57.566" endtime="20220706 09:01:59.142"/>
+</kw>
+<kw name="Fechar Navegador" library="Matheus-Chico">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 09:01:59.142" endtime="20220706 09:01:59.750"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:59.142" endtime="20220706 09:01:59.751"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:41.522" endtime="20220706 09:01:59.751"/>
+</test>
+<test id="s1-t5" name="Processo de compra de uma camiseta &quot;Alceu Dispor&quot; no site do Chico Rei" line="51">
+<kw name="Abrir o site da loja Chico Rei" library="Matheus-Chico">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 09:01:59.753" level="INFO">Opening browser 'Firefox' to base url 'https://www.chicorei.com'.</msg>
+<msg timestamp="20220706 09:01:59.753" level="INFO">Firefox driver log is always forced to to: C:\Users\Matheus\GitHub\CTD-Testing-I\Aula-21\Sincrona\ExercicioGuiado\geckodriver-5.log</msg>
+<status status="PASS" starttime="20220706 09:01:59.752" endtime="20220706 09:02:06.724"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 09:02:06.724" endtime="20220706 09:02:06.979"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:59.752" endtime="20220706 09:02:06.979"/>
+</kw>
+<kw name="Clicar em &quot;Concordar&quot; no aviso sobre Cookies" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_COOKIES}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:06.980" level="INFO">Clicking button 'id:confirmPolicyButton'.</msg>
+<status status="PASS" starttime="20220706 09:02:06.980" endtime="20220706 09:02:07.210"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:06.979" endtime="20220706 09:02:07.210"/>
+</kw>
+<kw name="Pesquisar por &quot;Alceu Dispor&quot; e selecionar a primeira opção da lista de resultados" library="Matheus-Chico">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>${TC5_PRODUCT_NAME}</arg>
+<arg>True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:07.211" level="INFO">Typing text 'Alceu Dispor' into text field 'id:header-search-input-desktop'.</msg>
+<status status="PASS" starttime="20220706 09:02:07.210" endtime="20220706 09:02:07.234"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220706 09:02:07.234" level="INFO">Sending key(s) ('RETURN',) to id:header-search-input-desktop element.</msg>
+<msg timestamp="20220706 09:02:07.495" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220706 09:02:07.495" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220706 09:02:07.234" endtime="20220706 09:02:07.517"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:02:07.517" endtime="20220706 09:02:08.411"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${SEARCH_RESULT_ELEMENT}</arg>
+<arg>${TC5_SEARCH_RESULT_TEXT}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:02:08.436" level="INFO">Element 'css:#catalog-breadcrumb &gt; li:nth-child(1) &gt; span:nth-child(1)' contains text 'Alceu Dispor'.</msg>
+<status status="PASS" starttime="20220706 09:02:08.411" endtime="20220706 09:02:08.436"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FIRST_SEARCH_RESULT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:08.436" level="INFO">Clicking element 'css:#catalog-main &gt; div &gt; div &gt; div:nth-child(1) &gt; ul &gt; li:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:02:08.436" endtime="20220706 09:02:11.407"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:07.210" endtime="20220706 09:02:11.407"/>
+</kw>
+<kw name="Validar se o valor do produto é &quot;R$ 69,99&quot;" library="Matheus-Chico">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRICE_ELEMENT}</arg>
+<arg>R$ 69,99</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 09:02:11.430" level="INFO">Element 'css:.text-yanone &gt; .d-inline-flex &gt; .h2' contains text 'R$ 69,99'.</msg>
+<status status="PASS" starttime="20220706 09:02:11.407" endtime="20220706 09:02:11.430"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:11.407" endtime="20220706 09:02:11.430"/>
+</kw>
+<kw name="Selecionar um tamanho, cor e clicar em comprar" library="Matheus-Chico">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:11.431" level="INFO">Clicking element 'css:nav.cr-option:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:02:11.431" endtime="20220706 09:02:11.680"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_SIZE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:11.680" level="INFO">Clicking element 'css:div.cr-option-squared:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:02:11.680" endtime="20220706 09:02:11.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHIRT_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:11.892" level="INFO">Clicking element 'css:.product-variations-colors &gt; div:nth-child(1) &gt; div:nth-child(1)'.</msg>
+<status status="PASS" starttime="20220706 09:02:11.891" endtime="20220706 09:02:12.103"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUY_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:12.103" level="INFO">Clicking button 'css:#product-buy-button-container &gt; button'.</msg>
+<status status="PASS" starttime="20220706 09:02:12.103" endtime="20220706 09:02:12.348"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:11.431" endtime="20220706 09:02:12.349"/>
+</kw>
+<kw name="Clicar em &quot;Ver sacola&quot;" library="Matheus-Chico">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 09:02:12.349" endtime="20220706 09:02:12.804"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:12.804" level="INFO">Clicking element 'css:#header-cart-popover &gt; div &gt; div.text-center &gt; a.btn.btn-lg.mb'.</msg>
+<status status="PASS" starttime="20220706 09:02:12.804" endtime="20220706 09:02:14.433"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:02:14.462" level="INFO">Current page contains text 'Sua sacola'.</msg>
+<status status="PASS" starttime="20220706 09:02:14.433" endtime="20220706 09:02:14.463"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:12.349" endtime="20220706 09:02:14.463"/>
+</kw>
+<kw name="Validar se a mensagem &quot;Sua primeira troca na Chico Rei é por nossa conta!&quot; está sendo exibida" library="Matheus-Chico">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TC5_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:02:14.497" level="INFO">Current page contains text 'Sua primeira troca na Chico Rei é por nossa conta!'.</msg>
+<status status="PASS" starttime="20220706 09:02:14.464" endtime="20220706 09:02:14.497"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:14.463" endtime="20220706 09:02:14.497"/>
+</kw>
+<kw name="Clicar em &quot;Fechar pedido&quot;" library="Matheus-Chico">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 09:02:14.498" level="INFO">Clicking button 'css:#cart-finish &gt; button.btn.btn-xl.btn-wide.mt.hidden-xs-down'.</msg>
+<status status="PASS" starttime="20220706 09:02:14.498" endtime="20220706 09:02:15.691"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_TEXT_TO_VALIDATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220706 09:02:15.707" level="INFO">Current page contains text 'Login'.</msg>
+<status status="PASS" starttime="20220706 09:02:15.691" endtime="20220706 09:02:15.707"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:14.498" endtime="20220706 09:02:15.707"/>
+</kw>
+<kw name="Fechar Navegador" library="Matheus-Chico">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 09:02:15.708" endtime="20220706 09:02:16.318"/>
+</kw>
+<status status="PASS" starttime="20220706 09:02:15.707" endtime="20220706 09:02:16.318"/>
+</kw>
+<status status="PASS" starttime="20220706 09:01:59.752" endtime="20220706 09:02:16.318"/>
+</test>
+<status status="PASS" starttime="20220706 09:00:44.583" endtime="20220706 09:02:16.319"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Matheus-Chico">Matheus-Chico</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

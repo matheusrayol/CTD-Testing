@@ -1,0 +1,12 @@
+1657108919763	geckodriver	INFO	Listening on 127.0.0.1:51804
+1657108922809	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51805" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Matheus\\AppData\\Local\\Temp\\rust_mozprofileSCseKr"
+1657108923030	Marionette	INFO	Marionette enabled
+1657108923032	Marionette	INFO	Listening on port 51814
+WebDriver BiDi listening on ws://localhost:51805
+Read port: 51814
+1657108923140	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Matheus\\AppData\\Local\\Temp\\rust_mozprofileSCseKr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51805/devtools/browser/0a4d6967-1ed1-4c8a-aec8-34bfc2ba82ed
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://chicorei.com"
+JavaScript error: https://d37qth7w71a0im.cloudfront.net/dist/vendor.9ccad97dcd7689775019.js, line 2: Error: Request aborted
+1657108935709	Marionette	INFO	Stopped listening on port 51814
